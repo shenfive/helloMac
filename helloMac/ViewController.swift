@@ -32,6 +32,7 @@ class ViewController: NSViewController {
         openPanel.allowedFileTypes = ["mp3"]
         openPanel.beginSheetModal(for: self.view.window!) { (respon) in
             print(openPanel.url?.lastPathComponent)
+            self.textField.stringValue = openPanel.url?.lastPathComponent ?? ""
         }
     }
     
