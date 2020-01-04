@@ -28,10 +28,11 @@ class ViewController: NSViewController {
     }
 
     @IBAction func buttonAction(_ sender: NSButton) {
-        
-        var text = textField.stringValue
-        print(text)
-        print("button Click")
+        let openPanel = NSOpenPanel()
+        openPanel.allowedFileTypes = ["mp3"]
+        openPanel.beginSheetModal(for: self.view.window!) { (respon) in
+            print(openPanel.url?.lastPathComponent)
+        }
     }
     
 }
