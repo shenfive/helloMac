@@ -7,9 +7,14 @@
 //
 
 import Cocoa
+import AVFoundation
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var textField: NSTextField!
+    
+     let synth = AVSpeechSynthesizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +27,12 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func buttonAction(_ sender: NSButton) {
+        
+        var text = textField.stringValue
+        print(text)
+        print("button Click")
+    }
+    
 }
 
